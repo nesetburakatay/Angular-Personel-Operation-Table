@@ -7,21 +7,39 @@
     </button>
 </div> -->
 
-
-
-
-
-
+<!-- 
 <div class="list-group">
     <button type="button" class="list-group-item list-group-item-action" *ngFor="let item of topage; let i = index">
 
-        <button type="button" class="btn btn-secondary visually-hidden" disabled>Id: <H4><strong>{{item.Id}}</strong></H4></button>
-        <button type="button" class="btn btn-outline-primary" disabled>Name:<h4><strong>{{item.Name}}</strong></h4></button> |
-        <button type="button" class="btn btn-outline-primary" disabled>Surname: <h4><strong>{{item.Surname}}</strong></h4></button> |
-        <button type="button" class="btn btn-outline-primary" disabled>Email: <h4><strong>{{item.EmailAddress}}</strong></h4></button>
+        <button type="button" class="btn btn-light visually-hidden" disabled>Id: <strong>{{item.Id}}</strong></button>
+        <button type="button" class="btn btn-light" disabled>Name:<strong class="fs-5">{{item.Name}}</strong></button> |
+        <button type="button" class="btn btn-light" disabled>Surname: <strong class="fs-5">{{item.Surname}}</strong></button> |
+        <button type="button" class="btn btn-light" disabled>Email: <strong class="fs-5">{{item.EmailAddress}}</strong></button>
 
-        <button type="button" id="{{i}}" class="btn btn-light float-end" (click)="deleteitem(item.Id)"><i class="fa-solid fa-trash"></i></button>
+        <button type="button" id="{{i}}" class="btn btn-light float-end" (click)="deleteitem(item.Id)"><i class="fa-solid fa-trash" style="color: red;"></i></button>
+       <button type="button" id="{{i}}" class="btn btn-light float-end" (click)="updateitem(item.Id,item.Name,item.Surname,item.EmailAddress); reloadPage()"><i class="fa-solid fa-pen"></i></button>
+    </button>
+</div> -->
+
+
+
+
+
+<div class="list-group pb-1" *ngFor="let item of topage; let i = index">
+    <button type="button" class="list-group-item list-group-item-action">
+
+        <button type="button" class="btn btn-light visually-hidden" disabled>Id: <strong>{{item.Id}}</strong></button>
+        <button type="button" class="btn btn-light" disabled>Name:<strong class="fs-5">{{item.Name}}</strong></button> |
+        <button type="button" class="btn btn-light" disabled>Surname: <strong class="fs-5">{{item.Surname}}</strong></button> |
+        <button type="button" class="btn btn-light" disabled>Email: <strong class="fs-5">{{item.EmailAddress}}</strong></button>
+
+        <button type="button" id="{{i}}" class="btn btn-light float-end" (click)="deleteitem(item.Id)"><i class="fa-solid fa-trash" style="color: red;"></i></button>
        <button type="button" id="{{i}}" class="btn btn-light float-end" (click)="updateitem(item.Id,item.Name,item.Surname,item.EmailAddress); reloadPage()"><i class="fa-solid fa-pen"></i></button>
     </button>
 </div>
 
+<div class="list-group pb-1" *ngIf="this.topage.length==0">
+    <button type="button" class="list-group-item list-group-item-action">
+        <strong>Personel listesi boş. Lütfen yeni bir personel ekleyin.</strong>
+    </button>
+</div>

@@ -11,13 +11,26 @@ import { tolist } from '../tolist';
 })
 export class FormComponent implements OnInit {
   constructor() {
+    // if (this.methods.getstatefromLocal()!=1000) {
+    //   this.stateofinput2=this.methods.getstatefromLocal();
+    //   this.stateofinput="update sayfa";
+    //   this.stateofinput3=1;
+
+    // }else{
+    //   this.stateofinput="normal sayfa";
+    //   this.stateofinput3=2;
+
+    // }
+    if (this.methods.getstatefromLocal()==null) {
+      this.reloadPage();
+    }
     if (this.methods.getstatefromLocal()!=1000) {
       this.stateofinput2=this.methods.getstatefromLocal();
-      this.stateofinput="update sayfa";
+      // this.stateofinput="update sayfa";
       this.stateofinput3=1;
 
     }else{
-      this.stateofinput="normal sayfa";
+      // this.stateofinput="normal sayfa";
       this.stateofinput3=2;
 
     }
@@ -29,6 +42,7 @@ export class FormComponent implements OnInit {
   stateofinput2:any="";
   stateofinput3:any="";
   buttonstate:number=1;
+  stateofnull:any;
 
   topage=[];
   DataBase: tolist[]=[];
@@ -49,10 +63,11 @@ export class FormComponent implements OnInit {
      localStorage.setItem("items",JSON.stringify(items));
      this.topage=this.methods.getitemsfromLocal();
     //  this.DataBase.push(this.getitemsfromLocal());
+    this.reloadPage();
     }
     else
     {
-      this.stateofinput="lütfen boşlukları tam doldurun.";
+      this.stateofnull="lütfen boşlukları tam doldurun.";
     }
   }
   

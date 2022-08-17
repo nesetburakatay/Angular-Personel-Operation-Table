@@ -22,17 +22,17 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Name</label>
-            <input #Nameinput class="form-control" id="Name" value="{{stateofinput2.Name}}" placeholder="Name" aria-label="Name" aria-describedby="Name">
+            <input #Nameinput class="form-control" style="background-color:rgba(0, 255, 0, 0.1);" id="Name" value="{{stateofinput2.Name}}" placeholder="Name" aria-label="Name" aria-describedby="Name">
         </div>
         <div class="mb-3">
             <label class="form-label">Surname</label>
-            <input #Surnameinput class="form-control" id="Surname" value="{{stateofinput2.Surname}}" placeholder="Surname" aria-label="Surname" aria-describedby="Surname">
+            <input #Surnameinput class="form-control" style="background-color:rgba(0, 255, 0, 0.1);" id="Surname" value="{{stateofinput2.Surname}}" placeholder="Surname" aria-label="Surname" aria-describedby="Surname">
         </div>
         <div class="mb-3">
             <label class="form-label">Email address</label>
-            <input #Emailinput class="form-control" id="Emailaddress" value="{{stateofinput2.EmailAddress}}" placeholder="Emailaddress" aria-label="Emailaddress" aria-describedby="Emailaddress">
+            <input #Emailinput class="form-control" style="background-color:rgba(0, 255, 0, 0.1);" id="Emailaddress" value="{{stateofinput2.EmailAddress}}" placeholder="Emailaddress" aria-label="Emailaddress" aria-describedby="Emailaddress">
         </div>
-        <button type="button" class="btn btn-success float-end" (click)="updateValue(Idinput.value,Nameinput,Surnameinput,Emailinput); Nameinput.value='';Surnameinput.value='';Emailinput.value=''; reloadPage()"><i class="fa-solid fa-check"></i>update</button>
+        <button type="button" class="btn btn-success float-end" (click)="updateValue(Idinput.value,Nameinput,Surnameinput,Emailinput); Nameinput.value='';Surnameinput.value='';Emailinput.value=''; reloadPage()"><i class="fa-solid fa-pen"></i> Update</button>
     </form>
 </div>
 <div *ngIf="stateofinput3==2">
@@ -49,17 +49,17 @@
             <label class="form-label">Email address</label>
             <input #Emailinput class="form-control" id="Emailaddress" placeholder="Emailaddress" aria-label="Emailaddress" aria-describedby="Emailaddress">
         </div>
-        <button type="button" class="btn btn-primary float-end" (click)="setValue(Nameinput,Surnameinput,Emailinput); Nameinput.value='';Surnameinput.value='';Emailinput.value=''; reloadPage()"><i class="fa-solid fa-check"></i>Add</button>
+        <button type="button" class="btn btn-primary float-end" (click)="setValue(Nameinput,Surnameinput,Emailinput); Nameinput.value='';Surnameinput.value='';Emailinput.value='';"><i class="fa-solid fa-plus"></i> Add</button>
     </form>
 </div>
 
 
 
 
-<i class="fa-solid fa-check"></i>
 
 <div style="color: red">
     {{stateofinput}}
+    {{stateofnull}}
 
 </div>
 

@@ -12,11 +12,13 @@ import { tolist } from '../tolist';
 export class ListComponent implements OnInit {
   constructor() {
     this.topage=this.methods.getitemsfromLocal();
+    this.isempty=this.topage.length
   }
   methods =new method();
   topage: tolist[] = [];
   topage1:any;
   topage2:any;
+  isempty:any;
 
   // deleteitem(a:number){
   //   let items=[];
